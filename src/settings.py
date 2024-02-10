@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -64,14 +64,7 @@ WSGI_APPLICATION = 'src.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hilo',
-        'USER':'postgres',
-        'PASSWORD':'12345',
-        'host':'localhost',
-        'port':5432
-    }
+    'default': dj_database_url.parse("postgres://postgres23:zaCnoz0qoaiWJSPvhKGeDQvQ5bHLWNPz@dpg-cn3jlbvqd2ns73ei0n10-a.frankfurt-postgres.render.com/hilo")
 }
 
 
